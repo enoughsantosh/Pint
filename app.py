@@ -2,6 +2,17 @@ from flask import Flask, request, jsonify
 import requests
 from bs4 import BeautifulSoup
 import re
+from fastapi.middleware.cors import CORSMiddleware
+
+
+
+# Enable CORS for frontend to access backend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app = Flask(__name__)
 
